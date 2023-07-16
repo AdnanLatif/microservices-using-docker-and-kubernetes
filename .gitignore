@@ -1,0 +1,5 @@
+# Ignore node_modules directory for all microservices
+inventory-service/node_modules/
+shipping-service/node_modules/
+users-service/node_modules/
+billing-service/node_modules/

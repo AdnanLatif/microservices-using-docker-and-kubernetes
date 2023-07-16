@@ -1,0 +1,25 @@
+version: '3'
+services:
+  inventory-service:
+    build:
+      context: ./inventory-service
+    ports:
+      - 5002:5002
+
+  shipping-service:
+    build:
+      context: ./shipping-service
+    ports:
+      - 5001:5001
+
+  users-service:
+    build:
+      context: ./users-service
+    ports:
+      - 5006:5006
+
+  billing-service:
+    build:
+      context: ./billing-service
+    ports:
+      - 5004:5004
