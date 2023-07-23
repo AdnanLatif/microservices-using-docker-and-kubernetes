@@ -3,3 +3,5 @@ inventory-service/node_modules/
 shipping-service/node_modules/
 users-service/node_modules/
 billing-service/node_modules/
+data-service/node_modules/
+webhook-service/node_modules/

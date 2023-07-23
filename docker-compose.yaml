@@ -1,25 +1,67 @@
-version: '3'
+version: '3.8'
+
 services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672' # RabbitMQ port
+      - '15672:15672' # RabbitMQ management UI
+    healthcheck:
+      test: ['CMD', 'rabbitmqctl', 'status']
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
   inventory-service:
     build:
       context: ./inventory-service
     ports:
       - 5002:5002
+    depends_on:
+      - rabbitmq
+    # Add other configurations for the inventory service as needed
 
   shipping-service:
     build:
       context: ./shipping-service
     ports:
       - 5001:5001
+    depends_on:
+      - rabbitmq
+    # Add other configurations for the shipping service as needed
 
   users-service:
     build:
       context: ./users-service
     ports:
       - 5006:5006
+    depends_on:
+      - rabbitmq
+    # Add other configurations for the users service as needed
 
   billing-service:
     build:
       context: ./billing-service
     ports:
       - 5004:5004
+    depends_on:
+      - rabbitmq
+    # Add other configurations for the billing service as needed
+
+  webhook-service:
+    build:
+      context: ./webhook-service
+    ports:
+      - 5005:5005
+    depends_on:
+      - rabbitmq
+    # Add other configurations for the webhook service as needed
+
+  data-service:
+    build:
+      context: ./data-service
+    ports:
+      - 5007:5007
+    depends_on:
+      - rabbitmq
+    # Add other configurations for the data service as needed

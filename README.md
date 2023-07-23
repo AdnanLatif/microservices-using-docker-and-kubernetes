@@ -12,11 +12,11 @@ You can use `npm run start:dev` command in each service to start the server
 
 ```
 {
-    "employeeId": "<your employee id>",
+    "employeeId": "21642",
 	"address": "lorem ipsum",
 	"address2": "lorem ipsum",
-	"postal": "74600",
-	"city": "KHI",
+	"postal": "63100",
+	"city": "BWP",
 	"country": "PAKISTAN"
 }
 ```
@@ -35,9 +35,11 @@ In case of duplicate number, use the 5th digit of your employee number or if tha
 As we can't user same port for 2 services
 
 Example:
-My employee number is 21803, so I will be running these services on following ports
+My employee number is 21642, so I will be running these services on following ports
 
 - inventory-service (5002)
 - shipping-service (5001)
-- users-service (5008)
-- billing-service (5000)
+- users-service (5006)
+- billing-service (5004)
+- webhook-service (5005)
+- data-service (5007)
