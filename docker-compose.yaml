@@ -64,4 +64,3 @@ services:
       - 5007:5007
     depends_on:
       - rabbitmq
-    # Add other configurations for the data service as needed
