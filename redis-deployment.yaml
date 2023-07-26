@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adnanlatif-21642-redis-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+        - name: redis-container
+          image: redis:latest
+          ports:
+            - containerPort: 2164
+          resources:
+            limits:
+              cpu: "500m"  # Limit the CPU usage to 0.5 CPU cores
+              memory: "512Mi"  # Limit the memory usage to 512 MiB
+            requests:
+              cpu: "100m"  # Set the initial CPU request to 0.1 CPU core
+              memory: "256Mi"  # Set the initial memory request to 256 MiB
