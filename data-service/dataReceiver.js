@@ -44,7 +44,7 @@ async function startReceiver() {
   }
 }
 
-async function retryConnectToRabbitMQ(maxAttempts = 5, intervalMs = 5000) {
+async function retryConnectToRabbitMQ(maxAttempts = 9, intervalMs = 5000) {
   let connection;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
